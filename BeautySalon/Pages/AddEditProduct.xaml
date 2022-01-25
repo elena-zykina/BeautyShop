@@ -30,7 +30,8 @@
                     <TextBlock Text="Производитель:" Width="150"
                                Style="{StaticResource mainTxtb}"/>
                     <ComboBox SelectedItem="{Binding Manufacturer}"
-                              DisplayMemberPath="Name" SelectedValuePath="ID" SelectionChanged="ComboBox_SelectionChanged"
+                              x:Name="ManufacturerCombo"
+                              DisplayMemberPath="Name" SelectedValuePath="ID" SelectionChanged="ManufacturerCombo_SelectionChanged"
                               Style="{StaticResource mainCombo}"/>
                 </WrapPanel>
                 <WrapPanel>

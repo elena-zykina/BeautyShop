@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BeautySalon.DataBase;
+using BeautySalon.Pages;
 
 namespace BeautySalon.Pages
 {
@@ -23,16 +25,29 @@ namespace BeautySalon.Pages
         public AddEditProduct()
         {
             InitializeComponent();
+            var filtItems = Transition.Context.Manufacturer.ToList();
+            filtItems.Insert(0, new Manufacturer { Name = "Все элементы" });
+            ManufacturerCombo.ItemsSource = filtItems;
+            ManufacturerCombo.SelectedIndex = 0;
         }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DataView()
         {
+            var tempDataProduct = Transition.Context.Product.ToList();
 
+            if (ManufacturerCombo.SelectedIndex > 0)
+                tempDataProduct = tempDataProduct
+                    .Where(p => p.ManufacturerID == (ManufacturerCombo.SelectedItem as Manufacturer).ID)
+                    .ToList();
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ManufacturerCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataView();
         }
     }
 }
