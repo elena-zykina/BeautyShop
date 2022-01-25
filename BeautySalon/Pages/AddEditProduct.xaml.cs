@@ -42,7 +42,23 @@ namespace BeautySalon.Pages
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                Product product = new Product()
+                {
+                    Title = TxtName.Text,
+                    Manufacturer = ManufacturerCombo.SelectedItem as Manufacturer,
+                    Cost = Convert.ToDecimal(TxtCost.Text)
+                };
+                Transition.Context.Product.Add(product);
+                Transition.Context.SaveChanges();
+                MessageBox.Show("Данные успешно добавлены.", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch(Exception er)
+            {
+                MessageBox.Show(er.Message.ToString());
+            }
+            Transition.MainFrame.GoBack();
         }
 
         private void ManufacturerCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)

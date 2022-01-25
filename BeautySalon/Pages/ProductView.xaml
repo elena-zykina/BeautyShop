@@ -57,8 +57,8 @@
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Количество записей:" Margin="855,0,0,-27"
-                       HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                <TextBlock Text="Количество записей:" Margin="855,0,10,-30"
+                       HorizontalAlignment="Right" VerticalAlignment="Bottom"
                        x:Name="CountItems" Grid.Row="1"
                            Style="{StaticResource CountTxtb}"/>
 
@@ -125,9 +125,10 @@
             <WrapPanel Grid.Row="2">
                 <Button Content="Добавить"
                         Style="{StaticResource mainBtn}"
-                x:Name="AddBtn" Click="AddBtn_Click"/>
+                        x:Name="AddBtn" Click="AddBtn_Click"/>
                 <Button Content="Удалить" Visibility="Hidden"
-                x:Name="DeleteProdBtn" Click="DeleteProdBtn_Click"/>
+                        Style="{StaticResource mainBtn}"
+                        x:Name="DeleteProdBtn" Click="DeleteProdBtn_Click"/>
             </WrapPanel>
         </Grid>
     </Grid>
