@@ -15,24 +15,36 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Добавление записи" FontSize="30"
-                   x:Name="HeaderBlock"/>
+                   x:Name="HeaderBlock"
+                   Style="{StaticResource mainTxtb}"/>
 
         <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel>
                 <WrapPanel>
-                    <TextBlock Text="Наименование:" Width="150"/>
-                    <TextBox Text="{Binding Title}"/>
+                    <TextBlock Text="Наименование:" Width="150"
+                               Style="{StaticResource mainTxtb}"/>
+                    <TextBox Text="{Binding Title}"
+                             Style="{StaticResource mainTxt}"/>
                 </WrapPanel>
                 <WrapPanel>
-                    <TextBlock Text="Производитель:" Width="150"/>
+                    <TextBlock Text="Производитель:" Width="150"
+                               Style="{StaticResource mainTxtb}"/>
                     <ComboBox SelectedItem="{Binding Manufacturer}"
-                              DisplayMemberPath="Name" SelectedValuePath="ID"/>
+                              DisplayMemberPath="Name" SelectedValuePath="ID" SelectionChanged="ComboBox_SelectionChanged"
+                              Style="{StaticResource mainCombo}"/>
                 </WrapPanel>
                 <WrapPanel>
-                    <TextBlock Text="Цена:" Width="150"/>
-                    <TextBox Text="{Binding Cost}"/>
+                    <TextBlock Text="Цена:" Width="150"
+                               Style="{StaticResource mainTxtb}"/>
+                    <TextBox Text="{Binding Cost}"
+                             Style="{StaticResource mainTxt}"/>
                 </WrapPanel>
             </StackPanel>
         </WrapPanel>
+        <Button x:Name="BtnSave"
+                Click="BtnSave_Click"
+                Style="{StaticResource mainBtn}"
+                Content="Сохранить" Margin="312,274,313,36" 
+                Grid.Row="1"/>
     </Grid>
 </Page>

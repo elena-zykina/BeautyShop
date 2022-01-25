@@ -4,36 +4,39 @@
              xmlns:local="clr-namespace:BeautySalon"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <SolidColorBrush x:Key="BasicBackground" Color="#FFFFFFFF"></SolidColorBrush>
-        <SolidColorBrush x:Key="AdditionalBackground" Color="#FFFFE4FF"></SolidColorBrush>
-        <SolidColorBrush x:Key="AttentionBackground" Color="#FFFF4A6D"></SolidColorBrush>
-        <Style TargetType="TextBlock">
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="16"></Setter>
-            <Setter Property="FontFamily" Value="Tahoma"></Setter>
-            <Setter Property="TextAlignment" Value="Right"></Setter>
+        <SolidColorBrush x:Key="BasicBackground" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="AdditionalBackground" Color="#FFFFE4FF"/>
+        <SolidColorBrush x:Key="AttentionBackground" Color="#FFFF4A6D"/>
+        <Style TargetType="TextBlock" x:Key="mainTxtb">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="TextAlignment" Value="Right"/>
         </Style>
 
-        <Style TargetType="Button">
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Width" Value="175"></Setter>
-            <Setter Property="Height" Value="30"></Setter>
-            <Setter Property="Margin" Value="10"></Setter>
-            <Setter Property="Background" Value="{StaticResource AttentionBackground}"/>
+        <Style TargetType="Button" x:Key="mainBtn">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Background" Value="#FFFF4A6D"/>
         </Style>
 
-        <Style TargetType="TextBox">
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="Width" Value="200"></Setter>
-            <Setter Property="Height" Value="30"></Setter>
-            <Setter Property="Margin" Value="10"></Setter>
-            <Setter Property="Padding" Value="0,4"></Setter>
+        <Style TargetType="TextBox" x:Key="mainTxt">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="0,4"/>
         </Style>
 
-        <Style TargetType="ComboBox">
+        <Style TargetType="ComboBox" x:Key="mainCombo">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Width" Value="200"/>

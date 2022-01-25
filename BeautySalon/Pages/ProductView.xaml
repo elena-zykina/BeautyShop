@@ -24,17 +24,21 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBox HorizontalAlignment="Stretch" 
-                 Width="auto" Text="Введите для поиска"
-                 x:Name="SearchProductBox" TextChanged="SearchProductBox_TextChanged"
-                     LostFocus="SearchProductBox_LostFocus" GotFocus="SearchProductBox_GotFocus"/>
+                         Style="{StaticResource mainTxt}"
+                         Width="auto" Text="Введите для поиска"
+                         x:Name="SearchProductBox" TextChanged="SearchProductBox_TextChanged"
+                         LostFocus="SearchProductBox_LostFocus" GotFocus="SearchProductBox_GotFocus"/>
 
                 <WrapPanel Grid.Column="1" HorizontalAlignment="Center">
-                    <ComboBox x:Name="SortCBox" SelectionChanged="SortCBox_SelectionChanged">
+                    <ComboBox x:Name="SortCBox" SelectionChanged="SortCBox_SelectionChanged"
+                              Style="{StaticResource mainCombo}">
                         <ComboBoxItem>
-                            <TextBlock Text="Нет"/>
+                            <TextBlock Text="Нет"
+                                       Style="{StaticResource mainTxtb}"/>
                         </ComboBoxItem>
                         <ComboBoxItem>
-                            <TextBlock Text="Стоимость"/>
+                            <TextBlock Text="Стоимость"
+                                       Style="{StaticResource mainTxtb}"/>
                         </ComboBoxItem>
                     </ComboBox>
 
@@ -43,7 +47,8 @@
                 </WrapPanel>
 
                 <ComboBox Grid.Column="2" DisplayMemberPath="Name"
-                      x:Name="FiltCBox" SelectionChanged="FiltCBox_SelectionChanged"/>
+                      x:Name="FiltCBox" SelectionChanged="FiltCBox_SelectionChanged"
+                          Style="{StaticResource mainCombo}"/>
             </Grid>
 
             <Grid Grid.Row="1">
@@ -114,6 +119,7 @@
 
             <WrapPanel Grid.Row="2">
                 <Button Content="Добавить"
+                        Style="{StaticResource mainBtn}"
                 x:Name="AddBtn" Click="AddBtn_Click"/>
                 <Button Content="Удалить" Visibility="Hidden"
                 x:Name="DeleteProdBtn" Click="DeleteProdBtn_Click"/>
