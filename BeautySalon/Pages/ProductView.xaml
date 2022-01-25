@@ -125,9 +125,10 @@
             <WrapPanel Grid.Row="2">
                 <Button Content="Добавить"
                         Style="{StaticResource mainBtn}"
-                x:Name="AddBtn" Click="AddBtn_Click"/>
+                        x:Name="AddBtn" Click="AddBtn_Click"/>
                 <Button Content="Удалить" Visibility="Hidden"
-                x:Name="DeleteProdBtn" Click="DeleteProdBtn_Click"/>
+                        Style="{StaticResource mainBtn}"
+                        x:Name="DeleteProdBtn" Click="DeleteProdBtn_Click"/>
             </WrapPanel>
         </Grid>
     </Grid>

@@ -23,7 +23,8 @@
                 <WrapPanel>
                     <TextBlock Text="Наименование:" Width="150"
                                Style="{StaticResource mainTxtb}"/>
-                    <TextBox Text="{Binding Title}"
+                    <TextBox x:Name="TxtName"
+                             Text="{Binding Title}"
                              Style="{StaticResource mainTxt}"/>
                 </WrapPanel>
                 <WrapPanel>
@@ -37,15 +38,18 @@
                 <WrapPanel>
                     <TextBlock Text="Цена:" Width="150"
                                Style="{StaticResource mainTxtb}"/>
-                    <TextBox Text="{Binding Cost}"
+                    <TextBox x:Name="TxtCost"
+                             Text="{Binding Cost}"
                              Style="{StaticResource mainTxt}"/>
                 </WrapPanel>
             </StackPanel>
         </WrapPanel>
-        <Button x:Name="BtnSave"
+        <Button VerticalAlignment="Bottom"
+                Margin="0 0 0 35"
+                x:Name="BtnSave"
                 Click="BtnSave_Click"
                 Style="{StaticResource mainBtn}"
-                Content="Сохранить" Margin="312,274,313,36" 
+                Content="Сохранить"  
                 Grid.Row="1"/>
     </Grid>
 </Page>
