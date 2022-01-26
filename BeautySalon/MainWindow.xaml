@@ -14,7 +14,7 @@
         <StackPanel Grid.Row="0" 
                     Background="#FFE1E4FF"
                     Orientation="Horizontal">
-            <Image Source=".//Resources/beauty_logo.png"
+            <Image Source="{Binding products}"
                    Width="55"
                    HorizontalAlignment="Left"
                    Margin="10 0 0 0"/>
