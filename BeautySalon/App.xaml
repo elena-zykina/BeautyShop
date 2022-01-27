@@ -7,6 +7,7 @@
         <SolidColorBrush x:Key="BasicBackground" Color="#FFFFFFFF"/>
         <SolidColorBrush x:Key="AdditionalBackground" Color="#FFFFE4FF"/>
         <SolidColorBrush x:Key="AttentionBackground" Color="#FFFF4A6D"/>
+        
         <Style TargetType="TextBlock" x:Key="mainTxtb">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -59,6 +60,11 @@
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
             <Setter Property="TextAlignment" Value="Right"/>
+        </Style>
+
+        <Style TargetType="RadioButton" x:Key="mainRb">
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="FontSize" Value="17"/>
         </Style>
     </Application.Resources>
 </Application>

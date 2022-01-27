@@ -13,23 +13,32 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BeautySalon.DataBase;
-using BeautySalon.Pages;
 
 namespace BeautySalon.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AddEditProduct.xaml
+    /// Логика взаимодействия для AddProduct.xaml
     /// </summary>
-    public partial class AddEditProduct : Page
+    public partial class AddProduct : Page
     {
-        public AddEditProduct()
+        bool LogicRb = false;
+        public AddProduct()
         {
             InitializeComponent();
             var filtItems = Transition.Context.Manufacturer.ToList();
             filtItems.Insert(0, new Manufacturer { Name = "Все элементы" });
             ManufacturerCombo.ItemsSource = filtItems;
             ManufacturerCombo.SelectedIndex = 0;
+            if (RbActive.IsChecked != false)
+                LogicRb = true;
+            else
+                LogicRb = false;
+            if (RbNotActive.IsChecked != false)
+                LogicRb = false;
+            else
+                LogicRb = true;
         }
+
         private void DataView()
         {
             var tempDataProduct = Transition.Context.Product.ToList();
@@ -40,6 +49,11 @@ namespace BeautySalon.Pages
                     .ToList();
         }
 
+        private void ManufacturerCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataView();
+        }
+
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -47,23 +61,20 @@ namespace BeautySalon.Pages
                 Product product = new Product()
                 {
                     Title = TxtName.Text,
+                    Cost = Convert.ToDecimal(TxtCost.Text),
+                    MainImagePath = TxtImage.Text,
                     Manufacturer = ManufacturerCombo.SelectedItem as Manufacturer,
-                    Cost = Convert.ToDecimal(TxtCost.Text)
+                    IsActive = LogicRb,    
                 };
                 Transition.Context.Product.Add(product);
                 Transition.Context.SaveChanges();
                 MessageBox.Show("Данные успешно добавлены.", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            catch(Exception er)
+            catch (Exception er)
             {
                 MessageBox.Show(er.Message.ToString());
             }
             Transition.MainFrame.GoBack();
-        }
-
-        private void ManufacturerCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DataView();
         }
     }
 }

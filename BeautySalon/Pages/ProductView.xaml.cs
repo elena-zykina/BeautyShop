@@ -83,7 +83,7 @@ namespace BeautySalon.Pages
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            Transition.MainFrame.Navigate(new AddEditProduct());
+            Transition.MainFrame.Navigate(new AddProduct());
         }
 
         private void DataView()
@@ -170,9 +170,15 @@ namespace BeautySalon.Pages
         private void ProductsView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ProductsView.SelectedItems.Count > 0)
+            {
                 DeleteProdBtn.Visibility = Visibility.Visible;
+                EditBtn.Visibility = Visibility.Visible;
+            }
             else
+            {
                 DeleteProdBtn.Visibility = Visibility.Hidden;
+                EditBtn.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -182,6 +188,11 @@ namespace BeautySalon.Pages
                 Transition.Context.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
                 DataView();
             }
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //Transition.MainFrame.Navigate(new EditProduct((sender as Button).DataContext as Product));
         }
     }
 }

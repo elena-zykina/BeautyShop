@@ -126,6 +126,9 @@
                 <Button Content="Добавить"
                         Style="{StaticResource mainBtn}"
                         x:Name="AddBtn" Click="AddBtn_Click"/>
+                <Button Content="Изменить" Visibility="Hidden"
+                        Style="{StaticResource mainBtn}"
+                        x:Name="EditBtn" Click="EditBtn_Click"/>
                 <Button Content="Удалить" Visibility="Hidden"
                         Style="{StaticResource mainBtn}"
                         x:Name="DeleteProdBtn" Click="DeleteProdBtn_Click"/>
