@@ -192,7 +192,7 @@ namespace BeautySalon.Pages
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
-            //Transition.MainFrame.Navigate(new EditProduct((sender as Button).DataContext as Product));
+            Transition.MainFrame.Navigate(new EditProduct((sender as Button).DataContext as Product));
         }
     }
 }

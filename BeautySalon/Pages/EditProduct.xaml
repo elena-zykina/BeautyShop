@@ -1,4 +1,4 @@
-﻿<Page x:Class="BeautySalon.Pages.AddProduct"
+﻿<Page x:Class="BeautySalon.Pages.EditProduct"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:BeautySalon.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddProduct">
+      Title="EditProduct">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,7 +14,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Добавление записи" FontSize="30"
+        <TextBlock Text="Изменение записи" FontSize="30"
                    x:Name="HeaderBlock"
                    Style="{StaticResource mainTxtb}"/>
 
@@ -30,7 +30,7 @@
                              Style="{StaticResource mainTxt}"/>
                 </WrapPanel>
                 <WrapPanel Orientation="Horizontal">
-                    <TextBlock Text="Цена товара(руб.):" Width="180"
+                    <TextBlock Text="Цена :" Width="180"
                                TextAlignment="Left"
                                Style="{StaticResource mainTxtb}"/>
                     <TextBox x:Name="TxtCost"
@@ -50,7 +50,7 @@
                                Style="{StaticResource mainTxtb}"/>
                     <ComboBox SelectedItem="{Binding Manufacturer}"
                               x:Name="ManufacturerCombo"
-                              DisplayMemberPath="Name" SelectedValuePath="ID" SelectionChanged="ManufacturerCombo_SelectionChanged"
+                              DisplayMemberPath="Name" SelectedValuePath="ID"
                               Style="{StaticResource mainCombo}"/>
                 </WrapPanel>
                 <WrapPanel Orientation="Horizontal">
