@@ -42,7 +42,7 @@
                         </ComboBoxItem>
                     </ComboBox>
 
-                    <CheckBox Content="По убыванию" Padding="4, -2" VerticalAlignment="Center"
+                    <CheckBox Content="По убыванию" Padding="2" VerticalAlignment="Center"
                           x:Name="CheckSort" Checked="CheckSort_Checked" Unchecked="CheckSort_Unchecked"
                               Style="{StaticResource mainCheck}"/>
                 </WrapPanel>
@@ -77,7 +77,7 @@
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="ListBoxItem">
-                                        <Border x:Name="BorderTest" BorderBrush="LightGray" BorderThickness="4" CornerRadius="1"
+                                        <Border x:Name="BorderTest" BorderBrush="Black" BorderThickness="1" CornerRadius="1"
                                                 Width="350" Height="350" Margin="10">
                                             <StackPanel>
                                                 <TextBlock Text="../Товары салона красоты/1781676-1.jpg" x:Name="ImagePath1" Visibility="Collapsed"/>
@@ -89,7 +89,7 @@
                                                     <Image Width="auto" Height="150"
                                                            Source="{Binding MainImagePath, StringFormat=../{0}}"/>
                                                 </Border>
-                                                
+
                                                 <TextBlock TextWrapping="Wrap" Width="300" TextAlignment="Center"
                                                            Margin="10" Text="{Binding Title}"
                                                            Style="{StaticResource mainTxtb}"/>
@@ -104,14 +104,14 @@
 
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="BorderTest" Property="Background" Value="LightGreen"/>
-                                                <Setter TargetName="BorderTest" Property="Cursor" Value="Hand"/>
+                                                <Setter TargetName="BorderTest" Property="Background" Value="#FFE1E4FF"/>
+                                                <Setter TargetName="BorderTest" Property="Cursor" Value="Hand"/> 
                                             </Trigger>
                                             <Trigger Property="IsSelected" Value="True">
-                                                <Setter TargetName="BorderTest" Property="Background" Value="#FFE1E4FF"/>
+                                                <Setter TargetName="BorderTest" Property="Background" Value="#FFFF4A6D"/>
                                             </Trigger>
-                                            <DataTrigger Binding="{Binding ActiveProd}" Value="неактивен">
-                                                <Setter TargetName="BorderTest" Property="Background" Value="Gray"/>
+                                            <DataTrigger Binding="{Binding IsActive}" Value="false">
+                                                <Setter TargetName="BorderTest" Property="Background" Value="LightGray"/>
                                             </DataTrigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
